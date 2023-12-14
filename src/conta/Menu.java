@@ -13,10 +13,10 @@ public class Menu {
 				
 		while(true) {
 
-			System.out.println(Cores.TEXT_BLUE + Cores.ANSI_YELLOW_BACKGROUND
+			System.out.println(Cores.TEXT_BLUE_BOLD + Cores.ANSI_WHITE_BACKGROUND
 					+ "*****************************************************");
 			System.out.println("                                                     ");
-			System.out.println("                BANCO DO BRAZIL COM Z                ");
+			System.out.println("                VORTEX BANK                          ");
 			System.out.println("                                                     ");
 			System.out.println("*****************************************************");
 			System.out.println("                                                     ");
@@ -85,9 +85,9 @@ public class Menu {
 
     public static void sobre() {
 	System.out.println("\n*********************************************************");
-	System.out.println("Projeto Desenvolvido por: ");
+	System.out.println("Projeto Desenvolvido por: André Prado Junior ");
 	System.out.println("Generation Brasil - generation@generation.org");
-	System.out.println("github.com/conteudoGeneration");
+	System.out.println("github.com/Andrepjr/contabancaria");
 	System.out.println("*********************************************************");
    }
 
