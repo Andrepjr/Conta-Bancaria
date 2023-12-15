@@ -1,13 +1,43 @@
 package conta;
 
 import java.util.Scanner;
+
 import conta.model.Conta;
 import conta.util.Cores;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 
 public class Menu {
-    public static void main(String[] args) {
+	
+	public static Scanner leia = new Scanner(System.in);
+   
+	public static void main(String[] args) {
         
-        Scanner leia = new Scanner(System.in);
+	    	//Teste da Classe Conta
+	    	Conta c1 =  new Conta (125,123,1,"Marcio",50000.0f);
+	    	c1.visualizar();
+	    	c1.sacar(10000.0f);
+	    	c1.visualizar();
+	    	c1.depositar(5000.0f);
+	    	c1.visualizar();
+	    	
+	    	// Teste da Classe Conta Corrente
+	    	ContaCorrente cc1 = new ContaCorrente(1, 123, 1, "José da Silva", 0.0f, 1000.0f);
+	    	cc1.visualizar();
+	    	cc1.sacar(12000.0f);
+	    	cc1.visualizar();
+	    	cc1.depositar(5000.0f);
+	    	cc1.visualizar();
+    	
+    		// Teste da Classe Conta Poupança
+    		ContaPoupanca cp1 = new ContaPoupanca(2, 123, 2, "Maria dos Santos", 100000.0f, 15);
+    		cp1.visualizar();
+    	    cp1.sacar(1000.0f);
+    	    cp1.visualizar();
+    		cp1.depositar(5000.0f);
+    		cp1.visualizar();
+    
+    	
 		
 		int opcao;
 				
@@ -33,7 +63,6 @@ public class Menu {
 			System.out.println("*****************************************************");
 			System.out.println("Entre com a opção desejada:                          ");
 			System.out.println("                                                     " + Cores.TEXT_RESET);
-			
 			opcao = leia.nextInt();
 				
 			if (opcao == 9) {
