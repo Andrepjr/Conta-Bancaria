@@ -18,9 +18,9 @@ public class Menu {
 		
 		ContaController contas = new ContaController();
 
-		int opcao, numero, agencia, tipo, aniversario;
+		int opcao, numero, agencia, tipo, aniversario, numeroDestino;
 		String titular;
-		float saldo, limite;
+		float saldo, limite, valor;
 		
 		System.out.println("\nCriar Contas\n");
 		
@@ -185,15 +185,49 @@ public class Menu {
 			case 6:
 				System.out.println(Cores.TEXT_WHITE + "Saque\n\n");
 				
+				System.out.println("Digite o numero da Conta: ");
+				numero = leia.nextInt();
+				
+				do {
+					System.out.println("Digite o valor do Saque (R$): ");
+					valor = leia.nextFloat();
+					
+				}while(valor <= 0);
+				
+				contas.sacar(numero, valor);
+				
 				keyPress();
 				break;
 			case 7:
 				System.out.println(Cores.TEXT_WHITE + "Depósito\n\n");
 				
+				System.out.println("Digite o Numero da Conta: ");
+				numero = leia.nextInt();
+				
+				do {
+					System.out.println("Digite o Valor do Depósito (R$): ");
+					valor = leia.nextFloat();
+				}while(valor <= 0);
+				
+				contas.depositar(numero, valor);
+				
 				keyPress();
 				break;
 			case 8:
 				System.out.println(Cores.TEXT_WHITE + "Transferência entre Contas\n\n");
+				
+				System.out.println("Digite o Numero da Conta de Origem: ");
+				numero = leia.nextInt();
+				System.out.println("Digite o Numero da Conta de Destino: ");
+				numeroDestino = leia.nextInt();
+				
+				do {
+					System.out.println("Digite o Valor da Transferencia (R$): ");
+					valor = leia.nextFloat();
+					
+				}while(valor <= 0);
+				
+				contas.transferir(numero, numeroDestino, valor);
 				
 				keyPress();
 				break;
@@ -208,9 +242,9 @@ public class Menu {
 
     	public static void sobre() {
 		System.out.println("\n*********************************************************");
-		System.out.println("Projeto Desenvolvido por: ");
-		System.out.println("Generation Brasil - generation@generation.org");
-		System.out.println("github.com/conteudoGeneration");
+		System.out.println("Projeto Desenvolvido por: André Prado Junior ");
+		System.out.println("Generation Brasil - andre.pradojr98@gmail.com");
+		System.out.println("github.com/Andrepjr");
 		System.out.println("*********************************************************");
 	}
     
